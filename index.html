@@ -130,7 +130,7 @@
         .kids-info-wrap { width: 100%; max-width: 600px; text-align: left; }
         .kids-offer-box { background: #ffffff; padding: 40px; border-radius: 30px; border: 2px solid #7ED321; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .kids-price-big { font-size: 3.5rem; font-weight: 900; color: var(--uplus-magenta); line-height: 1; margin: 10px 0; }
-        .kids-support-tag { background: var(--uplus-magenta); color: white; display: inline-block; padding: 8px 16px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(230, 0, 126, 0.3); }
+        .kids-support-tag { background: var(--uplus-magenta); color: white; display: inline-block; padding: 8px 16px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(230, 0, 126, 0.2); }
         
         .gift-list { list-style: none; padding: 0; margin: 20px 0 0 0; }
         .gift-list li { padding: 10px 0 10px 35px; position: relative; font-weight: 600; color: #333; border-bottom: 1px solid #f0f0f0; font-size: 1.05rem; }
@@ -176,13 +176,13 @@
 
         .floating-btn:active { transform: scale(0.95); }
 
-        /* 카카오톡 버튼 */
+        /* 카카오톡 버튼 스타일 */
         .btn-kakao {
             background: #FEE500;
             color: #3c1e1e;
         }
 
-        /* 전화 상담 버튼 */
+        /* 전화 상담 버튼 스타일 */
         .btn-call {
             background: var(--uplus-magenta);
             color: white;
@@ -240,7 +240,6 @@
         <!-- 갤럭시 S26 -->
         <div class="card">
             <div class="card-icon">
-                <!-- 언팩 전 Coming Soon 이미지 -->
                 <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop" alt="" onerror="this.src='https://via.placeholder.com/400x300/000000/e6007e?text=S26+COMING+SOON'">
                 <div class="coming-soon-overlay">COMING SOON</div>
             </div>
@@ -303,7 +302,6 @@
         
         <div class="kids-content">
             <div class="kids-main-image">
-                <!-- 지수님의 파일명 image_b3f2a6.jpg.png 와 일치시킴 -->
                 <img src="image_b3f2a6.jpg.png" alt="" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
             </div>
             
@@ -330,10 +328,12 @@
         <h2 style="text-align:center; font-size:2rem; font-weight:800; margin-bottom:10px;">지금 바로 상담 신청</h2>
         <p style="text-align:center; color:var(--uplus-magenta); font-weight:700; margin-bottom:40px; font-size: 1.1rem;">상담만 완료하셔도 다이소 5,000원 쿠폰 증정</p>
         
+        <!-- [1] 상담 신청 알림 이메일 ID 설정 -->
+        <!-- 아래 action 주소 끝에 Formspree에서 받은 고유 ID를 넣으세요 -->
         <form action="https://formspree.io/f/your_formspree_id" method="POST">
             <div class="form-group">
                 <label>소속 기업</label>
-                <select name="company" required>
+                <select name="소속기업" required>
                     <option value="">회사를 선택하세요</option>
                     <option value="LG화학">LG화학</option>
                     <option value="GS칼텍스">GS칼텍스</option>
@@ -341,11 +341,11 @@
                     <option value="기타">기타/협력사 (전체 가능)</option>
                 </select>
             </div>
-            <div class="form-group"><label>성함</label><input type="text" name="name" placeholder="성함을 입력하세요" required></div>
-            <div class="form-group"><label>연락처</label><input type="tel" name="phone" placeholder="010-0000-0000" required></div>
+            <div class="form-group"><label>성함</label><input type="text" name="성함" placeholder="성함을 입력하세요" required></div>
+            <div class="form-group"><label>연락처</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
             <div class="form-group">
                 <label>상담 희망 품목</label>
-                <select name="product">
+                <select name="상담품목">
                     <option value="S26사전예약">갤럭시 S26 사전예약</option>
                     <option value="인터넷TV">인터넷 + TV 결합</option>
                     <option value="유심변경">유심만 변경 (30만)</option>
@@ -359,20 +359,24 @@
 
 <footer>
     <p style="font-weight: 800; color: #333; font-size: 1.1rem; margin-bottom: 20px;">LG유플러스 여수산단 페스티벌 전담팀</p>
-    <p>매장 위치: 여수시 [상세 매장 주소 입력]</p>
-    <p>담당자 연락처: [지수님 연락처 입력]</p>
+    <!-- [2] 하단 텍스트 정보 수정 -->
+    <p>매장 위치: 여수시 운천로273 모아엘가 3층</p>
+    <p>담당자 연락처: 010-8080-4391</p>
     <p style="margin-top: 30px;">&copy; 2026 LG Uplus Corp. All Rights Reserved.</p>
 </footer>
 
 <!-- 하단 플로팅 버튼 그룹 -->
 <div class="floating-action-group">
-    <!-- 실시간 카톡 상담 -->
-    <a href="https://open.kakao.com/o/your_kakao_id" class="floating-btn btn-kakao">
+    <!-- [3] 카카오톡 실시간 상담 링크 설정 -->
+    <!-- href 주소의 your_kakao_id 부분을 실제 지수님의 오픈채팅방 주소로 바꾸세요 -->
+    <a href="https://open.kakao.com/o/sWmnjdii" class="floating-btn btn-kakao">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.134-9 7 0 2.474 1.656 4.632 4.116 5.864l-.946 3.473c-.053.195.168.358.326.248l4.137-2.88c.441.063.896.095 1.367.095 4.97 0 9-3.134 9-7s-4.03-7-9-7z"/></svg>
         실시간 카톡 상담
     </a>
-    <!-- 전화 상담하기 -->
-    <a href="tel:010-0000-0000" class="floating-btn btn-call">
+    
+    <!-- [4] 전화 상담 전화번호 설정 -->
+    <!-- tel: 뒤에 실제 지수님의 전화번호(숫자만)를 넣으세요 -->
+    <a href="tel:01080804391" class="floating-btn btn-call">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         전화 상담하기
     </a>
