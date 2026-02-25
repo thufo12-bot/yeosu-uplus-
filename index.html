@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여수산단 X U+ 콜라보 체인지 페스티벌</title>
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --uplus-pink: #E6007E;
+            --gold: #D4AF37;
+            --dark-bg: #0a0a0a;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+        body {
+            background-color: var(--dark-bg);
+            color: #ffffff;
+            font-family: 'Pretendard', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 공통 애니메이션 */
+        .fade-in { animation: fadeIn 1.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .glow { animation: glow 2s infinite alternate; }
+        @keyframes glow { from { text-shadow: 0 0 5px var(--gold); } to { text-shadow: 0 0 20px var(--gold), 0 0 30px var(--uplus-pink); } }
+
+        /* 헤더: 로고 섹션 */
+        header {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: rgba(0,0,0,0.8);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        header img { height: 25px; filter: grayscale(1) invert(1); opacity: 0.8; }
+
+        /* 히어로 섹션 */
+        .hero {
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1572969176410-66fc30403062?q=80&w=2070&auto=format&fit=crop'); /* 여수 야경 대용 */
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+        .hero h3 { color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; }
+        .hero h1 { font-size: 2.5rem; margin: 10px 0; line-height: 1.2; }
+        .hero .slogan { color: #ccc; font-size: 1.1rem; margin-bottom: 30px; }
+
+        /* 카운트다운 */
+        .timer-container {
+            background: rgba(255,255,255,0.1);
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 50px;
+            border: 1px solid var(--gold);
+            margin-bottom: 40px;
+        }
+        #timer { font-size: 1.5rem; font-weight: bold; color: var(--gold); }
+
+        /* 메인 혜택 카드 */
+        .section-title { text-align: center; color: var(--gold); margin: 50px 0 30px; }
+        .benefit-grid { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 0 20px; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .card::before {
+            content: "EXCLUSIVE";
+            position: absolute;
+            top: 10px;
+            right: -30px;
+            background: var(--gold);
+            color: black;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+        }
+        .card h2 { color: var(--gold); margin-top: 0; }
+        .price { font-size: 2rem; font-weight: 800; color: var(--uplus-pink); margin: 10px 0; }
+        .highlight { color: #00ffcc; font-weight: bold; }
+
+        /* 상담 폼 */
+        .form-section { background: #151515; padding: 60px 20px; margin-top: 50px; }
+        form { max-width: 500px; margin: 0 auto; text-align: left; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #aaa; }
+        input, select, textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #222;
+            color: white;
+            font-size: 1rem;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(45deg, var(--uplus-pink), var(--gold));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(230, 0, 126, 0.3);
+        }
+
+        /* 하단 고정 버튼 */
+        .floating-kakao {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background: #FEE500;
+            color: #3c1e1e;
+            padding: 15px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+
+        footer { padding: 40px 20px; text-align: center; color: #666; font-size: 0.9rem; border-top: 1px solid #222; }
+
+        @media (min-width: 768px) {
+            .benefit-grid { grid-template-columns: 1fr 1fr; max-width: 1000px; margin: 0 auto; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <span style="font-weight: bold; letter-spacing: 1px;">LG화학 | GS칼텍스 | 롯데케미칼</span>
+</header>
+
+<section class="hero">
+    <div class="fade-in">
+        <h3>YEOASU COMPLEX X U+</h3>
+        <h1 class="glow">새로운 시작,<br>유플러스가 함께 합니다</h1>
+        <p class="slogan">여수산단 임직원 전용 역대급 체인지 페스티벌</p>
+        
+        <div class="timer-container">
+            <div id="timer">S26 정식 개통까지 D-Day</div>
+        </div>
+        <br>
+        <button class="submit-btn" style="max-width: 300px;" onclick="location.href='#form'">지금 바로 혜택 예약하기</button>
+    </div>
+</section>
+
+<div class="section-title">
+    <h2>ONLY FOR YOU: 5대 핵심 혜택</h2>
+</div>
+
+<div class="benefit-grid">
+    <div class="card fade-in">
+        <h2>GALAXY S26 사전예약</h2>
+        <p class="price">체감가 0원</p>
+        <ul>
+            <li><span class="highlight">더블 스토리지:</span> 256GB → 512GB 무료 업그레이드</li>
+            <li>갤럭시 보상패스 50% 보장 (24개월 사용 후)</li>
+            <li>삼성 정품 케이스 & 워치7 or 버즈3 (택1) 증정</li>
+            <li>제휴카드 캐시백 최대 14만원 별도</li>
+        </ul>
+    </div>
+
+    <div class="card fade-in">
+        <h2>인터넷 + TV 가입</h2>
+        <p class="price">최대 150만원 상당</p>
+        <p>현금 100만원 지원 또는 그에 상응하는 최신 가전제품(스탠바이미 등) 100% 증정</p>
+        <p class="highlight">여수산단 임직원 단독 추가 지원금 포함</p>
+    </div>
+
+    <div class="card fade-in">
+        <h2>임직원 전용 결합 할인</h2>
+        <p class="price">월 38,500원</p>
+        <p>105 요금제(무제한) 기준 결합 시 할인 적용</p>
+        <ul>
+            <li>OTT(유튜브 프리미엄, 넷플릭스 등) 무료</li>
+            <li>2nd 디바이스 2회선 요금 무료</li>
+            <li><span class="highlight">청소년 임직원 자녀:</span> 월 28,500원</li>
+        </ul>
+    </div>
+
+    <div class="card fade-in">
+        <h2>유심만 변경해도</h2>
+        <p class="price">현금 30만원 증정</p>
+        <p>기존 폰 그대로, 번호 그대로 유심만 바꿔도 현금 지원 (93일 유지 조건)</p>
+    </div>
+</div>
+
+<section class="form-section" id="form">
+    <div class="section-title" style="margin-top: 0;">
+        <h2>후회 없는 선택, 상담 예약</h2>
+        <p>상담만 받으셔도 <span class="highlight">다이소 5,000원권</span>을 드립니다!</p>
+    </div>
+
+    <form action="https://formspree.io/f/지수님의_ID" method="POST">
+        <label>소속 기업</label>
+        <select name="company" required>
+            <option value="">소속 회사를 선택하세요</option>
+            <option value="LG화학">LG화학</option>
+            <option value="GS칼텍스">GS칼텍스</option>
+            <option value="롯데케미칼">롯데케미칼</option>
+            <option value="기타/협력사">기타/협력사</option>
+        </select>
+
+        <label>이름</label>
+        <input type="text" name="name" placeholder="성함을 입력하세요" required>
+
+        <label>연락처</label>
+        <input type="tel" name="phone" placeholder="010-0000-0000" required>
+
+        <label>관심 있는 혜택 (중복 선택 가능)</label>
+        <div style="margin-bottom: 20px;">
+            <input type="checkbox" name="interest" value="S26사전예약" style="width: auto;"> S26 사전예약
+            <input type="checkbox" name="interest" value="인터넷TV" style="width: auto; margin-left: 15px;"> 인터넷+TV
+            <input type="checkbox" name="interest" value="유심변경" style="width: auto; margin-left: 15px;"> 유심변경
+            <input type="checkbox" name="interest" value="키즈폰" style="width: auto; margin-left: 15px;"> 키즈폰(무너폰2)
+        </div>
+
+        <label>상담 방식</label>
+        <select name="consult_type">
+            <option value="전화상담">매장 전화 상담</option>
+            <option value="찾아가는서비스">찾아가는 서비스 (방문상담)</option>
+        </select>
+
+        <label>방문 상담 희망 시 주소/시간</label>
+        <textarea name="address" rows="3" placeholder="찾아가는 서비스를 원하실 경우 주소와 희망 시간을 적어주세요"></textarea>
+
+        <label>유입 경로</label>
+        <select name="path">
+            <option value="현수막">현수막</option>
+            <option value="전단지">전단지</option>
+            <option value="동료추천">동료 추천</option>
+            <option value="기타">기타</option>
+        </select>
+
+        <p style="font-size: 0.8rem; color: #666; margin-bottom: 20px;">* 수집된 개인정보는 상담 완료 후 즉시 파기됩니다.</p>
+        
+        <button type="submit" class="submit-btn">역대급 혜택 신청하기</button>
+    </form>
+</section>
+
+<footer>
+    <p>LG유플러스 여수산단 페스티벌 전담팀</p>
+    <p>매장 위치: 여수시 [상세 주소 입력] | 담당자: 페스티벌 담당자</p>
+    <p>&copy; 2026 LG Uplus Corp. All rights reserved.</p>
+</footer>
+
+<a href="https://open.kakao.com/o/sWmnjdii"floating-kakao">
+    <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png" width="20" alt="카톡">
+    실시간 카톡 상담
+</a>
+
+<script>
+    // S26 개통일 카운트다운 (2026년 3월 6일)
+    const countdownDate = new Date("March 6, 2026 00:00:00").getTime();
+
+    const x = setInterval(function() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = `개통까지 ${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("timer").innerHTML = "지금 바로 즉시 개통 가능!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
