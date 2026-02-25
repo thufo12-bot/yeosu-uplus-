@@ -130,7 +130,7 @@
         .kids-info-wrap { width: 100%; max-width: 600px; text-align: left; }
         .kids-offer-box { background: #ffffff; padding: 40px; border-radius: 30px; border: 2px solid #7ED321; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .kids-price-big { font-size: 3.5rem; font-weight: 900; color: var(--uplus-magenta); line-height: 1; margin: 10px 0; }
-        .kids-support-tag { background: var(--uplus-magenta); color: white; display: inline-block; padding: 8px 16px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(230, 0, 126, 0.2); }
+        .kids-support-tag { background: var(--uplus-magenta); color: white; display: inline-block; padding: 8px 16px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(230, 0, 126, 0.3); }
         
         .gift-list { list-style: none; padding: 0; margin: 20px 0 0 0; }
         .gift-list li { padding: 10px 0 10px 35px; position: relative; font-weight: 600; color: #333; border-bottom: 1px solid #f0f0f0; font-size: 1.05rem; }
@@ -154,7 +154,7 @@
             transform: translateX(-50%);
             display: flex;
             gap: 10px;
-            width: 90%;
+            width: 95%;
             max-width: 500px;
             z-index: 1001;
         }
@@ -302,11 +302,13 @@
         
         <div class="kids-content">
             <div class="kids-main-image">
-                <img src="image_b3f2a6.jpg" alt="" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
+                <!-- 지수님이 깃허브에 올리신 파일명에 맞춘 경로 -->
+                <img src="image_b3f2a6.jpg.png" alt="" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
             </div>
             
             <div class="kids-info-wrap">
                 <div class="kids-offer-box">
+                    <!-- 요청하신 유체페 특별 혜택 및 기기 가격 0원 반영 -->
                     <div class="kids-support-tag">🎁 유체페 특별 혜택: 6개월 요금 전액 지원</div>
                     <div class="kids-price-big">기기 가격 0원</div>
                     <ul class="gift-list">
@@ -328,7 +330,7 @@
         <h2 style="text-align:center; font-size:2rem; font-weight:800; margin-bottom:10px;">지금 바로 상담 신청</h2>
         <p style="text-align:center; color:var(--uplus-magenta); font-weight:700; margin-bottom:40px; font-size: 1.1rem;">상담만 완료하셔도 다이소 5,000원 쿠폰 증정</p>
         
-        <form action="https://formspree.io/f/지수님의_ID" method="POST">
+        <form action="https://formspree.io/f/your_formspree_id" method="POST">
             <div class="form-group">
                 <label>소속 기업</label>
                 <select name="company" required>
@@ -339,8 +341,8 @@
                     <option value="기타">기타/협력사 (전체 가능)</option>
                 </select>
             </div>
-            <div class="form-group"><label>성함</label><input type="text" name="이름" placeholder="성함을 입력하세요" required></div>
-            <div class="form-group"><label>연락처</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
+            <div class="form-group"><label>성함</label><input type="text" name="name" placeholder="성함을 입력하세요" required></div>
+            <div class="form-group"><label>연락처</label><input type="tel" name="phone" placeholder="010-0000-0000" required></div>
             <div class="form-group">
                 <label>상담 희망 품목</label>
                 <select name="product">
@@ -365,7 +367,7 @@
 <!-- 하단 플로팅 버튼 그룹 -->
 <div class="floating-action-group">
     <!-- 실시간 카톡 상담 -->
-    <a href="https://open.kakao.com/o/지수님의오픈채팅ID" class="floating-btn btn-kakao">
+    <a href="https://open.kakao.com/o/your_kakao_id" class="floating-btn btn-kakao">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.134-9 7 0 2.474 1.656 4.632 4.116 5.864l-.946 3.473c-.053.195.168.358.326.248l4.137-2.88c.441.063.896.095 1.367.095 4.97 0 9-3.134 9-7s-4.03-7-9-7z"/></svg>
         실시간 카톡 상담
     </a>
