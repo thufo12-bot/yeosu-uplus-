@@ -28,9 +28,9 @@
             word-break: keep-all;
         }
 
-        /* 헤더 */
+        /* 헤더: 범용성 있는 문구 */
         header {
-            padding: 18px 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -43,13 +43,15 @@
         }
         header .brand-wrap { 
             font-weight: 800; 
-            color: var(--uplus-magenta); 
-            font-size: 1.15rem; 
+            color: var(--text-main); 
+            font-size: 1.05rem; 
             display: flex; 
             align-items: center; 
-            gap: 10px; 
+            gap: 8px; 
+            letter-spacing: -0.5px;
         }
-        header .divider { width: 1px; height: 16px; background: #ddd; }
+        header .highlight { color: var(--uplus-magenta); }
+        header .divider { width: 1px; height: 12px; background: #ddd; }
 
         /* 히어로 섹션 */
         .hero {
@@ -114,7 +116,8 @@
 
         /* 플로팅 버튼 */
         .floating-action-group { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; width: 95%; max-width: 500px; z-index: 1001; }
-        .floating-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 40px; text-decoration: none; font-weight: 800; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+        .floating-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 40px; text-decoration: none; font-weight: 800; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: transform 0.2s; }
+        .floating-btn:active { transform: scale(0.95); }
         .btn-kakao { background: #FEE500; color: #3c1e1e; }
         .btn-call { background: var(--uplus-magenta); color: white; }
 
@@ -133,10 +136,11 @@
 
 <header>
     <div class="brand-wrap">
-        <span>LG화학</span> <div class="divider"></div> 
-        <span>GS칼텍스</span> <div class="divider"></div> 
-        <span>롯데케미칼</span> <div class="divider"></div> 
-        <span style="color:#222">임직원 전용 콜라보</span>
+        <span>여수국가산단</span>
+        <div class="divider"></div>
+        <span class="highlight">전 기업 및 협력사</span>
+        <div class="divider"></div>
+        <span>임직원 전용 혜택</span>
     </div>
 </header>
 
@@ -150,7 +154,7 @@
             <div class="word-row"><span class="point-char">페</span><span class="rest-char">스티벌</span></div>
         </div>
     </h1>
-    <p style="color:var(--text-sub); margin:30px 0; font-size:1.2rem; font-weight:500;">오직 여수산단 임직원만을 위한 역대급 혜택의 서막</p>
+    <p style="color:var(--text-sub); margin:30px 0; font-size:1.2rem; font-weight:500;">여수산단 모든 가족을 위한 역대급 혜택의 서막</p>
     <div class="timer-box">
         <div class="timer-unit"><div class="timer-val" id="days">00</div><div style="font-size:0.7rem;">일</div></div>
         <div class="timer-unit"><div class="timer-val" id="hours">00</div><div style="font-size:0.7rem;">시간</div></div>
@@ -170,7 +174,7 @@
         <!-- 갤럭시 S26 -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070" alt="">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070" alt="갤럭시 S26 커밍순">
                 <div class="coming-soon-overlay">COMING SOON</div>
             </div>
             <h3 style="font-size:1.5rem; margin:0;">갤럭시 S26 사전예약</h3>
@@ -185,7 +189,7 @@
         <!-- 인터넷 + TV -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=2070" alt="">
+                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=2070" alt="인터넷 TV">
             </div>
             <h3 style="font-size:1.5rem; margin:0;">인터넷 + TV 가입</h3>
             <div class="price-tag">현금 100만원 지원</div>
@@ -199,7 +203,7 @@
         <!-- 무제한 요금제 -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070" alt="">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070" alt="무제한 요금제">
             </div>
             <h3 style="font-size:1.5rem; margin:0;">무제한 요금제 결합</h3>
             <div class="price-tag">월 38,500원</div>
@@ -213,7 +217,7 @@
         <!-- 유심 변경 -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070" alt="">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070" alt="유심 변경 혜택">
             </div>
             <h3 style="font-size:1.5rem; margin:0;">유심만 변경해도</h3>
             <div class="price-tag">현금 30만원 증정</div>
@@ -230,7 +234,7 @@
         <h2 style="font-size:2rem; font-weight:800; margin-bottom:40px;">U+ 무너에디션2 <span style="color:var(--uplus-magenta);">키즈폰 0원</span></h2>
         <div class="kids-content">
             <div class="kids-main-image">
-                <img src="image_b3f2a6.jpg.png" alt="" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
+                <img src="image_b3f2a6.jpg.png" alt="무너폰2 포스터" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
             </div>
             <div class="kids-info-wrap">
                 <div class="kids-offer-box">
@@ -262,7 +266,9 @@
                     <option value="LG화학">LG화학</option>
                     <option value="GS칼텍스">GS칼텍스</option>
                     <option value="롯데케미칼">롯데케미칼</option>
-                    <option value="기타/협력사">기타/협력사</option>
+                    <option value="한화솔루션">한화솔루션</option>
+                    <option value="금호석유화학">금호석유화학</option>
+                    <option value="기타/협력사">기타/협력사 (전 기업 가능)</option>
                 </select>
             </div>
             <div class="form-group">
@@ -300,8 +306,9 @@
 
 <footer>
     <p style="font-weight:800; color:#333; font-size:1.1rem; margin-bottom:15px;">LG유플러스 여수산단 페스티벌 전담팀</p>
-    <p>매장 위치: 광주광역시 서구 운천로273 모아엘가 3층</p>
-    <p>담당자 연락처: 010-8080-4391</p>
+    <!-- [수정] 매장 위치 및 담당자 정보 -->
+    <p>매장 위치: 광주광역시 서구 운천로 273 모아엘가 3층</p>
+    <p>담당자: 김지수 010-8080-4391</p>
     <p style="margin-top:30px;">&copy; 2026 LG Uplus Corp. All Rights Reserved.</p>
 </footer>
 
@@ -330,13 +337,13 @@
         document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
     }, 1000);
 
-    // 2. 제출 로직
+    // 2. 제출 로직 (UCRM 새창 + 텔레그램 알림)
     const consultForm = document.getElementById('consultForm');
     if (consultForm) {
         consultForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // [!] 대리점별 전용 UCRM 링크로 교체하세요
+            // 전용 UCRM 추천 링크
             const ucrmUrl = "https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=cHBzbTc2ODYmMjAyNjAyMTIxNDI4NTk=";
             window.open(ucrmUrl, '_blank');
             
@@ -349,12 +356,9 @@
             const carrier = formData.get('carrier');
             const product = formData.get('product');
 
-            // ======================================================
-            // [지수님 설정 완료] 텔레그램 봇 정보가 반영되었습니다.
-            // ======================================================
+            // 텔레그램 봇 정보
             const BOT_TOKEN = "8633339161:AAFrUxspxKfsDgCGvpOdhh_SJa6gRhasFkQ"; 
             const CHAT_ID = "8627078854"; 
-            // ======================================================
             
             const text = `🚨 [유체페 신청 알림]\n🏢 소속: ${company}\n📶 통신사: ${carrier}\n📱 관심: ${product}\n\n⚠️ 고객이 공식 접수페이지로 이동했습니다. 카톡 문의를 확인해 주세요!`;
 
@@ -369,4 +373,3 @@
 
 </body>
 </html>
-
