@@ -109,42 +109,56 @@
         .card ul li { margin-bottom: 12px; padding-left: 28px; position: relative; font-size: 1.05rem; color: #444; font-weight: 500; }
         .card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--uplus-magenta); font-weight: bold; }
 
-        /* 키즈폰 전용 섹션 */
+        /* 키즈폰 섹션 */
         .kids-section { background-color: #f0f9ff; padding: 80px 20px; margin: 60px 0; text-align: center; border-radius: 40px; border: 2px solid #e0f2fe; }
         .kids-badge { background: var(--kids-blue); color: white; padding: 6px 20px; border-radius: 30px; font-weight: bold; margin-bottom: 25px; display: inline-block; font-size: 0.9rem; }
         .kids-title { font-size: 2.2rem; font-weight: 800; margin-bottom: 40px; }
         .kids-title span { color: var(--uplus-magenta); }
-        
         .kids-content { display: flex; flex-direction: column; align-items: center; gap: 40px; max-width: 1000px; margin: 0 auto; }
-        
-        .kids-main-image { 
-            width: 100%; 
-            max-width: 500px; 
-            border-radius: 20px; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            background: #fff;
-            transition: transform 0.3s;
-        }
+        .kids-main-image { width: 100%; max-width: 500px; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); background: #fff; }
         .kids-main-image img { width: 100%; height: auto; border-radius: 20px; display: block; }
-
         .kids-info-wrap { width: 100%; max-width: 600px; text-align: left; }
         .kids-offer-box { background: #ffffff; padding: 40px; border-radius: 30px; border: 2px solid #7ED321; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .kids-price-big { font-size: 3.5rem; font-weight: 900; color: var(--uplus-magenta); line-height: 1; margin: 10px 0; }
-        .kids-support-tag { background: var(--uplus-magenta); color: white; display: inline-block; padding: 8px 16px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; box-shadow: 0 5px 15px rgba(230, 0, 126, 0.2); }
-        
+        .kids-support-tag { background: var(--uplus-magenta); color: white; display: inline-block; padding: 8px 16px; border-radius: 10px; font-weight: bold; margin-bottom: 20px; font-size: 1.2rem; }
         .gift-list { list-style: none; padding: 0; margin: 20px 0 0 0; }
         .gift-list li { padding: 10px 0 10px 35px; position: relative; font-weight: 600; color: #333; border-bottom: 1px solid #f0f0f0; font-size: 1.05rem; }
-        .gift-list li:last-child { border-bottom: none; }
         .gift-list li::before { content: '🎁'; position: absolute; left: 0; font-size: 1.2rem; }
 
-        /* 상담 폼 */
-        .form-section { background: var(--bg-gray); padding: 100px 20px; border-radius: 60px 60px 0 0; }
-        .form-box { max-width: 600px; margin: 0 auto; background: white; padding: 50px 40px; border-radius: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
-        .form-group { margin-bottom: 25px; }
-        label { display: block; margin-bottom: 10px; font-weight: 700; color: #333; font-size: 0.95rem; }
-        input, select, textarea { width: 100%; padding: 18px 22px; border-radius: 16px; border: 2px solid #eee; font-size: 1.05rem; background: #fafafa; }
-        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--uplus-magenta); background: white; }
-        .submit-btn { width: 100%; padding: 24px; background: var(--uplus-magenta); color: white; border: none; border-radius: 18px; font-size: 1.4rem; font-weight: 800; cursor: pointer; box-shadow: 0 12px 30px rgba(230, 0, 126, 0.3); margin-top: 15px; transition: all 0.3s; }
+        /* [수정] 신청 섹션: 폼 삭제 및 공식 시스템 연동 버튼형으로 변경 */
+        .apply-section { background: var(--bg-gray); padding: 100px 20px; border-radius: 60px 60px 0 0; text-align: center; }
+        .apply-box { max-width: 700px; margin: 0 auto; background: white; padding: 60px 40px; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+        .apply-box h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; color: #000; }
+        .apply-box p.desc { color: #555; font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6; }
+        
+        /* 버튼 디자인 */
+        .main-apply-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 28px;
+            background: var(--uplus-magenta);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-size: 1.6rem;
+            font-weight: 900;
+            box-shadow: 0 15px 35px rgba(230, 0, 126, 0.3);
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+        .main-apply-btn:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(230, 0, 126, 0.4); }
+
+        /* 카톡 필수 안내 박스 */
+        .notice-box {
+            background: #FFF9E6;
+            border: 2px dashed #FFB800;
+            padding: 25px;
+            border-radius: 20px;
+            text-align: left;
+        }
+        .notice-box h4 { margin: 0 0 10px 0; color: #d48a00; font-size: 1.2rem; display: flex; align-items: center; gap: 8px; }
+        .notice-box p { margin: 0; color: #665200; font-weight: 600; line-height: 1.5; font-size: 1.05rem; }
+        .notice-box strong { color: var(--uplus-magenta); text-decoration: underline; }
 
         /* 하단 플로팅 버튼 영역 */
         .floating-action-group {
@@ -158,7 +172,6 @@
             max-width: 500px;
             z-index: 1001;
         }
-
         .floating-btn {
             flex: 1;
             display: flex;
@@ -171,22 +184,9 @@
             font-weight: 800;
             font-size: 0.95rem;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        .floating-btn:active { transform: scale(0.95); }
-
-        /* 카카오톡 버튼 스타일 */
-        .btn-kakao {
-            background: #FEE500;
-            color: #3c1e1e;
-        }
-
-        /* 전화 상담 버튼 스타일 */
-        .btn-call {
-            background: var(--uplus-magenta);
-            color: white;
-        }
+        .btn-kakao { background: #FEE500; color: #3c1e1e; }
+        .btn-call { background: var(--uplus-magenta); color: white; }
 
         footer { text-align: center; padding: 80px 20px 120px; color: #999; font-size: 0.95rem; background: #fff; border-top: 1px solid #f5f5f5; }
 
@@ -194,10 +194,8 @@
             .benefit-grid { grid-template-columns: 1fr 1fr; }
             .point-char { font-size: 7rem; }
             .rest-char { font-size: 3.5rem; }
-            .kids-content { flex-direction: row; align-items: stretch; justify-content: center; text-align: left; }
-            .kids-main-image { flex: 1; }
-            .kids-info-wrap { flex: 1.2; display: flex; flex-direction: column; justify-content: center; }
-            .floating-action-group { bottom: 30px; }
+            .kids-content { flex-direction: row; }
+            .kids-main-image, .kids-info-wrap { flex: 1; }
         }
     </style>
 </head>
@@ -237,7 +235,6 @@
     </div>
 
     <div class="benefit-grid">
-        <!-- 갤럭시 S26 -->
         <div class="card">
             <div class="card-icon">
                 <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070&auto=format&fit=crop" alt="" onerror="this.src='https://via.placeholder.com/400x300/000000/e6007e?text=S26+COMING+SOON'">
@@ -251,8 +248,6 @@
                 <li><strong>갤럭시 보상패스:</strong> 24개월 후 50% 반납 보장</li>
             </ul>
         </div>
-
-        <!-- 인터넷 + TV -->
         <div class="card">
             <div class="card-icon">
                 <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=2070&auto=format&fit=crop" alt="" onerror="this.src='https://via.placeholder.com/400x300/f0f0f0/e6007e?text=Internet+and+TV'">
@@ -265,8 +260,6 @@
                 <li>설치 및 사은품 즉시 지급 원칙</li>
             </ul>
         </div>
-
-        <!-- 요금제 결합 -->
         <div class="card">
             <div class="card-icon">
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop" alt="" onerror="this.src='https://via.placeholder.com/400x300/f0f0f0/e6007e?text=Unlimited+Data'">
@@ -279,8 +272,6 @@
                 <li><strong>시그니처 이용 시</strong> 자녀폰 요금 0원</li>
             </ul>
         </div>
-
-        <!-- 유심 변경 -->
         <div class="card">
             <div class="card-icon">
                 <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop" alt="" onerror="this.src='https://via.placeholder.com/400x300/f0f0f0/e6007e?text=Cash+Benefit'">
@@ -296,15 +287,13 @@
     </div>
 
     <!-- 키즈폰 단독 섹션 -->
-    <div class="kids-section" id="kids-special">
+    <div class="kids-section">
         <div class="kids-badge">우리 아이 새학기 선물</div>
         <h2 class="kids-title">U+ 무너에디션2 <span>키즈폰 0원</span></h2>
-        
         <div class="kids-content">
             <div class="kids-main-image">
                 <img src="image_b3f2a6.jpg.png" alt="" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
             </div>
-            
             <div class="kids-info-wrap">
                 <div class="kids-offer-box">
                     <div class="kids-support-tag">🎁 유체페 특별 혜택: 6개월 요금 전액 지원</div>
@@ -317,65 +306,48 @@
                         <li>무료 키즈토피아 무너 스페셜 아이템</li>
                     </ul>
                 </div>
-                <p style="margin-top:20px; color:#666; font-size:0.95rem; font-weight: 500;">※ 여수산단 임직원 가족 한정 VIP 전용 특별 구성</p>
+                <p style="margin-top:20px; color:#666; font-size:0.95rem;">※ 여수산단 임직원 가족 한정 VIP 전용 특별 구성</p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="form-section" id="form">
-    <div class="form-box">
-        <h2 style="text-align:center; font-size:2rem; font-weight:800; margin-bottom:10px;">지금 바로 상담 신청</h2>
-        <p style="text-align:center; color:var(--uplus-magenta); font-weight:700; margin-bottom:40px; font-size: 1.1rem;">상담만 완료하셔도 다이소 5,000원 쿠폰 증정</p>
+<!-- [수정] 자사 UCRM 연동 신청 섹션 -->
+<div class="apply-section" id="apply">
+    <div class="apply-box">
+        <h2>지금 바로 혜택 신청하기</h2>
+        <p class="desc">고객님의 소중한 개인정보 보호를 위해<br><strong>LG유플러스 공식 추천 시스템</strong>을 통해 안전하게 접수됩니다.</p>
         
-        <!-- [1] 상담 신청 알림 이메일 ID 설정 -->
-        <!-- 아래 action 주소 끝에 Formspree에서 받은 고유 ID를 넣으세요 -->
-        <form action="https://formspree.io/f/your_formspree_id" method="POST">
-            <div class="form-group">
-                <label>소속 기업</label>
-                <select name="소속기업" required>
-                    <option value="">회사를 선택하세요</option>
-                    <option value="LG화학">LG화학</option>
-                    <option value="GS칼텍스">GS칼텍스</option>
-                    <option value="롯데케미칼">롯데케미칼</option>
-                    <option value="기타">기타/협력사 (전체 가능)</option>
-                </select>
-            </div>
-            <div class="form-group"><label>성함</label><input type="text" name="성함" placeholder="성함을 입력하세요" required></div>
-            <div class="form-group"><label>연락처</label><input type="tel" name="연락처" placeholder="010-0000-0000" required></div>
-            <div class="form-group">
-                <label>상담 희망 품목</label>
-                <select name="상담품목">
-                    <option value="S26사전예약">갤럭시 S26 사전예약</option>
-                    <option value="인터넷TV">인터넷 + TV 결합</option>
-                    <option value="유심변경">유심만 변경 (30만)</option>
-                    <option value="키즈폰">키즈폰 (무너폰2)</option>
-                </select>
-            </div>
-            <button type="submit" class="submit-btn">역대급 기회 신청하기</button>
-        </form>
+        <!-- 공식 UCRM 링크 연동 버튼 -->
+        <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=cHBzbTc2ODYmMjAyNjAyMTIxNDI4NTk=" target="_blank" class="main-apply-btn">
+            역대급 기회 신청하기 (공식)
+        </a>
+
+        <!-- 카톡 유도 안내 박스 -->
+        <div class="notice-box">
+            <h4>⚠️ 필독: 사은품 증정 안내</h4>
+            <p>
+                위 버튼을 눌러 접수를 완료하신 후, 반드시 하단 <strong>[실시간 카톡 상담]</strong>으로 <br>
+                <strong>"상담 신청 완료했습니다"</strong>라고 메시지를 남겨주세요! <br>
+                확인 즉시 <strong>다이소 5,000원 상품권</strong>을 보내드립니다.
+            </p>
+        </div>
     </div>
 </div>
 
 <footer>
     <p style="font-weight: 800; color: #333; font-size: 1.1rem; margin-bottom: 20px;">LG유플러스 여수산단 페스티벌 전담팀</p>
-    <!-- [2] 하단 텍스트 정보 수정 -->
     <p>매장 위치: 여수시 운천로273 모아엘가 3층</p>
     <p>담당자 연락처: 010-8080-4391</p>
     <p style="margin-top: 30px;">&copy; 2026 LG Uplus Corp. All Rights Reserved.</p>
 </footer>
 
-<!-- 하단 플로팅 버튼 그룹 -->
+<!-- 하단 플로팅 버튼 -->
 <div class="floating-action-group">
-    <!-- [3] 카카오톡 실시간 상담 링크 설정 -->
-    <!-- href 주소의 your_kakao_id 부분을 실제 지수님의 오픈채팅방 주소로 바꾸세요 -->
     <a href="https://open.kakao.com/o/sWmnjdii" class="floating-btn btn-kakao">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.134-9 7 0 2.474 1.656 4.632 4.116 5.864l-.946 3.473c-.053.195.168.358.326.248l4.137-2.88c.441.063.896.095 1.367.095 4.97 0 9-3.134 9-7s-4.03-7-9-7z"/></svg>
         실시간 카톡 상담
     </a>
-    
-    <!-- [4] 전화 상담 전화번호 설정 -->
-    <!-- tel: 뒤에 실제 지수님의 전화번호(숫자만)를 넣으세요 -->
     <a href="tel:01080804391" class="floating-btn btn-call">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         전화 상담하기
@@ -383,7 +355,6 @@
 </div>
 
 <script>
-    // 카운트다운 (2026년 3월 6일)
     const targetDate = new Date("March 6, 2026 00:00:00").getTime();
     setInterval(() => {
         const now = new Date().getTime();
@@ -394,16 +365,6 @@
         document.getElementById("minutes").innerText = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
     }, 1000);
-
-    // 스무스 스크롤
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
 </script>
 
 </body>
