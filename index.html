@@ -69,8 +69,6 @@
         }
         .hero h1 { margin: 0; line-height: 1.1; }
         .sub-collab { display: block; font-size: 1.4rem; color: #555; margin-bottom: 15px; font-weight: 700; }
-        .uchepe-title { display: flex; flex-direction: column; align-items: center; gap: 5px; }
-        .word-row { display: flex; align-items: baseline; justify-content: center; gap: 2px; }
         .point-char { font-size: 5rem; color: var(--uplus-magenta); font-weight: 900; }
         .rest-char { font-size: 2.5rem; color: #222; font-weight: 800; }
 
@@ -83,13 +81,14 @@
         .container { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .benefit-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
-        .card { background: #fff; border-radius: 32px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #f5f5f5; text-align: center; }
+        .card { background: #fff; border-radius: 32px; padding: 40px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); border: 1px solid #f5f5f5; text-align: center; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
         .card-icon { width: 100%; height: 180px; margin-bottom: 25px; border-radius: 20px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #000; position: relative; }
         .card-icon img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
         .coming-soon-overlay { position: absolute; color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; }
         .price-tag { font-size: 2.2rem; font-weight: 900; color: var(--uplus-magenta); margin: 15px 0; }
         .card ul { padding: 20px 0 0; list-style: none; border-top: 1px solid #f0f0f0; text-align: left; }
-        .card ul li { margin-bottom: 10px; font-weight: 500; }
+        .card ul li { margin-bottom: 10px; font-weight: 500; font-size: 1rem; color: #444; }
         .card ul li::before { content: '✓'; color: var(--uplus-magenta); margin-right: 10px; font-weight: bold; }
 
         /* Kids Phone Section */
@@ -97,25 +96,22 @@
         .kids-offer-box { background: #fff; padding: 40px; border-radius: 30px; border: 2px solid #7ED321; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .kids-main-image img { width: 100%; border-radius: 20px; }
 
-        /* Apply Section (Consulting) */
+        /* Apply Section */
         .apply-section { background: var(--bg-gray); padding: 80px 20px; border-radius: 60px 60px 0 0; }
         .apply-box { max-width: 600px; margin: 0 auto; background: white; padding: 50px 40px; border-radius: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); text-align: center; }
         .form-group { margin-bottom: 20px; text-align: left; }
         label { display: block; margin-bottom: 8px; font-weight: 700; color: #333; }
         select { width: 100%; padding: 18px; border-radius: 16px; border: 2px solid #eee; font-size: 1rem; background: #fafafa; }
         .submit-btn { width: 100%; padding: 22px; background: var(--uplus-magenta); color: white; border: none; border-radius: 18px; font-size: 1.4rem; font-weight: 800; cursor: pointer; box-shadow: 0 12px 30px rgba(230, 0, 126, 0.3); transition: all 0.3s; }
-        .submit-btn:hover { transform: translateY(-3px); }
-        .submit-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+        .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
 
         /* Notice Box */
         .notice-box { background: #FFF9E6; border: 2px dashed #FFB800; padding: 20px; border-radius: 20px; margin-top: 30px; text-align: left; }
-        .notice-box h4 { margin: 0 0 10px; color: #d48a00; }
         .notice-box p { margin: 0; font-size: 0.95rem; font-weight: 600; color: #665200; line-height: 1.6; }
 
         /* Floating Buttons */
         .floating-action-group { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; width: 95%; max-width: 500px; z-index: 1001; }
-        .floating-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 40px; text-decoration: none; font-weight: 800; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); transition: transform 0.2s; }
-        .floating-btn:active { transform: scale(0.95); }
+        .floating-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 40px; text-decoration: none; font-weight: 800; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
         .btn-kakao { background: #FEE500; color: #3c1e1e; }
         .btn-call { background: var(--uplus-magenta); color: white; }
 
@@ -168,44 +164,70 @@
     </div>
 
     <div class="benefit-grid">
-        <!-- Galaxy S26 -->
+        <!-- Card 1: S26 -->
         <div class="card">
             <div class="card-icon">
                 <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070" alt="갤럭시 S26 커밍순">
                 <div class="coming-soon-overlay">COMING SOON</div>
             </div>
-            <h3 style="font-size:1.6rem; margin:0;">갤럭시 S26 사전예약</h3>
+            <h3 style="font-size:1.5rem; margin:0;">갤럭시 S26 사전예약</h3>
             <div class="price-tag">고객 부담금 0원</div>
             <ul>
-                <li>더블 스토리지: 512GB 무료 업그레이드</li>
-                <li>세컨 디바이스: 워치7 또는 버즈3 증정</li>
-                <li>갤럭시 보상패스: 24개월 후 50% 반납 보장</li>
+                <li>512GB 무료 더블 스토리지</li>
+                <li>워치7 또는 버즈3 무료 증정</li>
+                <li>갤럭시 보상패스 50% 반납 보장</li>
             </ul>
         </div>
 
-        <!-- Internet + TV -->
+        <!-- Card 2: Internet + TV -->
         <div class="card">
             <div class="card-icon">
                 <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=2070" alt="인터넷과 TV">
             </div>
-            <h3 style="font-size:1.6rem; margin:0;">인터넷 + TV 가입</h3>
+            <h3 style="font-size:1.5rem; margin:0;">인터넷 + TV 가입</h3>
             <div class="price-tag">현금 100만원 지원</div>
             <ul>
-                <li>프리미엄 가전 100% 증정 (최대 150만 상당)</li>
-                <li>산단 임직원 전담팀 단독 추가 지원금</li>
-                <li>당일 설치 및 사은품 즉시 지급 원칙</li>
+                <li>최대 150만원 상당 프리미엄 가전</li>
+                <li>산단 임직원 전담팀 단독 추가 지원</li>
+                <li>설치 당일 사은품 즉시 지급</li>
+            </ul>
+        </div>
+
+        <!-- Card 3: Unlimited Plan (복구됨) -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070" alt="무제한 요금제">
+            </div>
+            <h3 style="font-size:1.5rem; margin:0;">무제한 요금제 결합</h3>
+            <div class="price-tag">월 38,500원</div>
+            <ul>
+                <li>85 요금제 기준 결합 시 월 3만원대</li>
+                <li>유플러스 투게더 결합 최대 할인</li>
+                <li>시그니처 이용 시 자녀폰 요금 0원</li>
+            </ul>
+        </div>
+
+        <!-- Card 4: USIM Change (복구됨) -->
+        <div class="card">
+            <div class="card-icon">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070" alt="유심 변경 혜택">
+            </div>
+            <h3 style="font-size:1.5rem; margin:0;">유심만 변경해도</h3>
+            <div class="price-tag">현금 30만원 증정</div>
+            <ul>
+                <li>쓰던 폰 그대로 번호 이동 시 혜택</li>
+                <li>93일 유지 외 추가 제약 없음</li>
+                <li>타사 위약금 전액 지원 상담 가능</li>
             </ul>
         </div>
     </div>
 
     <!-- Kids Phone Special -->
     <div class="kids-section">
-        <div style="background:var(--kids-blue); color:white; padding:6px 20px; border-radius:30px; font-weight:bold; display:inline-block; margin-bottom:20px; font-size:0.9rem;">우리 아이 새학기 선물</div>
         <h2 style="font-size:2rem; font-weight:800; margin-bottom:40px;">U+ 무너에디션2 <span style="color:var(--uplus-magenta);">키즈폰 0원</span></h2>
-        
         <div class="kids-content">
             <div class="kids-main-image">
-                <img src="image_b3f2a6.jpg.png" alt="무너폰2 포스터" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
+                <img src="image_b3f2a6.jpg.png" alt="무너폰2 포스터" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=Moona+Edition+2'">
             </div>
             <div class="kids-info-wrap">
                 <div class="kids-offer-box">
@@ -218,17 +240,16 @@
                         <li style="padding:8px 0;">✅ 국·영·수 AI 교육팩 3개월</li>
                     </ul>
                 </div>
-                <p style="margin-top:20px; color:#666; font-size:0.95rem; font-weight:500;">※ 여수산단 임직원 가족 한정 VIP 전용 구성</p>
             </div>
         </div>
     </div>
 </div>
 
-<!-- Consult Section (Integrated UCRM + Telegram) -->
+<!-- Apply Section -->
 <div class="apply-section" id="apply">
     <div class="apply-box">
         <h2 style="margin:0 0 10px;">지금 바로 혜택 신청하기</h2>
-        <p style="color:#666; margin-bottom:40px; font-size:1.1rem;">소중한 개인정보 보호를 위해<br><strong>LG유플러스 공식 인증 시스템</strong>을 통해 접수됩니다.</p>
+        <p style="color:#666; margin-bottom:40px; font-size:1.1rem;">공식 추천 시스템을 통해 안전하게 접수됩니다.</p>
         
         <form id="consultForm">
             <div class="form-group">
@@ -241,7 +262,7 @@
                     <option value="기타/협력사">기타/협력사</option>
                 </select>
             </div>
-            <!-- [추가] 통신사 선택 항목 -->
+            <!-- Carrier Selection -->
             <div class="form-group">
                 <label>현재 사용 중인 통신사</label>
                 <select name="carrier" required>
@@ -265,12 +286,11 @@
         </form>
 
         <div class="notice-box">
-            <h4 style="margin:0 0 10px; color:#d48a00;">⚠️ 필독: 사은품 증정 안내</h4>
             <p>
                 위 버튼을 눌러 <strong>새창에서 접수를 완료</strong>하신 후,<br>
                 다시 돌아와 하단 <strong>[실시간 카톡 상담]</strong> 버튼을 눌러 <br>
                 <span style="color:var(--uplus-magenta);">"상담 신청 완료했습니다"</span> 메시지를 꼭 남겨주세요!<br>
-                확인 즉시 <strong>다이소 5,000원 상품권</strong>을 전송해 드립니다.
+                확인 즉시 <strong>다이소 5,000원 상품권</strong>을 드립니다.
             </p>
         </div>
     </div>
@@ -290,13 +310,13 @@
         실시간 카톡 상담
     </a>
     <a href="tel:01080804391" class="floating-btn btn-call">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         전화 상담하기
     </a>
 </div>
 
 <script>
-    // 1. Countdown Timer (Target: March 6, 2026)
+    // 1. Countdown Timer
     const targetDate = new Date("March 6, 2026 00:00:00").getTime();
     setInterval(() => {
         const now = new Date().getTime();
@@ -308,41 +328,32 @@
         document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
     }, 1000);
 
-    // 2. Submit Logic: Telegram Alert + UCRM New Window
+    // 2. Submit Logic
     const consultForm = document.getElementById('consultForm');
     if (consultForm) {
         consultForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
             const ucrmUrl = "https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=cHBzbTc2ODYmMjAyNjAyMTIxNDI4NTk=";
-            
-            // Open UCRM in a new tab immediately
             window.open(ucrmUrl, '_blank');
             
-            // Visual feedback
             const btn = document.getElementById('submitBtn');
             btn.innerText = "새 창에서 접수 중입니다...";
             btn.disabled = true;
             
             const formData = new FormData(this);
             const company = formData.get('company');
-            const carrier = formData.get('carrier'); // [추가] 통신사 정보 가져오기
+            const carrier = formData.get('carrier');
             const product = formData.get('product');
 
-            // Telegram Notification Config
             const BOT_TOKEN = "8542782104:AAFsHvPTZimTxmVj1jZW7yfReemVZKsbao0";
             const CHAT_ID = "6675909268";
-            // [수정] 텔레그램 메시지에 통신사 정보 추가
             const text = `🚨 [유체페 신청 알림]\n🏢 소속: ${company}\n📶 통신사: ${carrier}\n📱 관심: ${product}\n\n⚠️ 고객이 공식 접수페이지로 이동했습니다. 카톡 문의를 확인해 주세요!`;
 
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ chat_id: CHAT_ID, text: text })
-            }).then(response => {
-                if (response.ok) console.log('Telegram Alert Sent');
-            }).catch(error => {
-                console.error('Error sending Telegram alert:', error);
             });
         });
     }
