@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>여수산단 X 유플러스 | 유플러스 체인지 페스티벌</title>
-    <!-- Premium Font: Pretendard -->
+    <!-- 프리미엄 폰트 Pretendard -->
     <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
     <style>
         :root {
@@ -15,6 +15,7 @@
             --bg-gray: #F8F9FA;
             --white: #ffffff;
             --kids-blue: #4A90E2;
+            --kids-green: #7ED321;
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; outline: none; }
@@ -27,7 +28,7 @@
             word-break: keep-all;
         }
 
-        /* Header Styling */
+        /* 헤더 */
         header {
             padding: 18px 20px;
             display: flex;
@@ -50,7 +51,7 @@
         }
         header .divider { width: 1px; height: 16px; background: #ddd; }
 
-        /* Hero Section */
+        /* 히어로 섹션 */
         .hero {
             padding: 100px 20px 80px;
             background-color: var(--uplus-light-pink);
@@ -69,15 +70,17 @@
         }
         .hero h1 { margin: 0; line-height: 1.1; }
         .sub-collab { display: block; font-size: 1.4rem; color: #555; margin-bottom: 15px; font-weight: 700; }
+        .uchepe-title { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .word-row { display: flex; align-items: baseline; justify-content: center; gap: 2px; }
         .point-char { font-size: 5rem; color: var(--uplus-magenta); font-weight: 900; }
         .rest-char { font-size: 2.5rem; color: #222; font-weight: 800; }
 
-        /* Timer Box */
+        /* 타이머 */
         .timer-box { display: inline-flex; gap: 12px; margin: 30px 0; }
         .timer-unit { background: #fff; border: 2.5px solid var(--uplus-magenta); padding: 14px; border-radius: 18px; min-width: 75px; font-weight: 800; color: var(--uplus-magenta); box-shadow: 0 6px 20px rgba(230, 0, 126, 0.08); }
         .timer-val { font-size: 1.8rem; line-height: 1; }
 
-        /* Container & Cards */
+        /* 컨테이너 및 카드 그리드 */
         .container { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
         .section-title { text-align: center; margin-bottom: 50px; }
         .benefit-grid { display: grid; grid-template-columns: 1fr; gap: 30px; }
@@ -88,15 +91,15 @@
         .coming-soon-overlay { position: absolute; color: white; font-weight: 900; font-size: 1.5rem; letter-spacing: 2px; }
         .price-tag { font-size: 2.2rem; font-weight: 900; color: var(--uplus-magenta); margin: 15px 0; }
         .card ul { padding: 20px 0 0; list-style: none; border-top: 1px solid #f0f0f0; text-align: left; }
-        .card ul li { margin-bottom: 10px; font-weight: 500; font-size: 1rem; color: #444; }
+        .card ul li { margin-bottom: 10px; font-weight: 500; color: #444; }
         .card ul li::before { content: '✓'; color: var(--uplus-magenta); margin-right: 10px; font-weight: bold; }
 
-        /* Kids Phone Section */
+        /* 키즈폰 섹션 */
         .kids-section { background-color: #f0f9ff; padding: 60px 20px; border-radius: 40px; text-align: center; margin: 60px 0; }
         .kids-offer-box { background: #fff; padding: 40px; border-radius: 30px; border: 2px solid #7ED321; text-align: left; box-shadow: 0 10px 30px rgba(0,0,0,0.03); }
         .kids-main-image img { width: 100%; border-radius: 20px; }
 
-        /* Apply Section */
+        /* 신청 섹션 */
         .apply-section { background: var(--bg-gray); padding: 80px 20px; border-radius: 60px 60px 0 0; }
         .apply-box { max-width: 600px; margin: 0 auto; background: white; padding: 50px 40px; border-radius: 35px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); text-align: center; }
         .form-group { margin-bottom: 20px; text-align: left; }
@@ -105,11 +108,11 @@
         .submit-btn { width: 100%; padding: 22px; background: var(--uplus-magenta); color: white; border: none; border-radius: 18px; font-size: 1.4rem; font-weight: 800; cursor: pointer; box-shadow: 0 12px 30px rgba(230, 0, 126, 0.3); transition: all 0.3s; }
         .submit-btn:disabled { background: #ccc; cursor: not-allowed; }
 
-        /* Notice Box */
+        /* 안내 문구 */
         .notice-box { background: #FFF9E6; border: 2px dashed #FFB800; padding: 20px; border-radius: 20px; margin-top: 30px; text-align: left; }
         .notice-box p { margin: 0; font-size: 0.95rem; font-weight: 600; color: #665200; line-height: 1.6; }
 
-        /* Floating Buttons */
+        /* 플로팅 버튼 */
         .floating-action-group { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; width: 95%; max-width: 500px; z-index: 1001; }
         .floating-btn { flex: 1; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 16px; border-radius: 40px; text-decoration: none; font-weight: 800; font-size: 0.95rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
         .btn-kakao { background: #FEE500; color: #3c1e1e; }
@@ -164,10 +167,10 @@
     </div>
 
     <div class="benefit-grid">
-        <!-- Card 1: S26 -->
+        <!-- 갤럭시 S26 -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070" alt="갤럭시 S26 커밍순">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2070" alt="">
                 <div class="coming-soon-overlay">COMING SOON</div>
             </div>
             <h3 style="font-size:1.5rem; margin:0;">갤럭시 S26 사전예약</h3>
@@ -179,10 +182,10 @@
             </ul>
         </div>
 
-        <!-- Card 2: Internet + TV -->
+        <!-- 인터넷 + TV -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=2070" alt="인터넷과 TV">
+                <img src="https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?q=80&w=2070" alt="">
             </div>
             <h3 style="font-size:1.5rem; margin:0;">인터넷 + TV 가입</h3>
             <div class="price-tag">현금 100만원 지원</div>
@@ -193,10 +196,10 @@
             </ul>
         </div>
 
-        <!-- Card 3: Unlimited Plan (복구됨) -->
+        <!-- 무제한 요금제 -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070" alt="무제한 요금제">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070" alt="">
             </div>
             <h3 style="font-size:1.5rem; margin:0;">무제한 요금제 결합</h3>
             <div class="price-tag">월 38,500원</div>
@@ -207,10 +210,10 @@
             </ul>
         </div>
 
-        <!-- Card 4: USIM Change (복구됨) -->
+        <!-- 유심 변경 -->
         <div class="card">
             <div class="card-icon">
-                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070" alt="유심 변경 혜택">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070" alt="">
             </div>
             <h3 style="font-size:1.5rem; margin:0;">유심만 변경해도</h3>
             <div class="price-tag">현금 30만원 증정</div>
@@ -222,12 +225,12 @@
         </div>
     </div>
 
-    <!-- Kids Phone Special -->
+    <!-- 키즈폰 단독 섹션 -->
     <div class="kids-section">
         <h2 style="font-size:2rem; font-weight:800; margin-bottom:40px;">U+ 무너에디션2 <span style="color:var(--uplus-magenta);">키즈폰 0원</span></h2>
         <div class="kids-content">
             <div class="kids-main-image">
-                <img src="image_b3f2a6.jpg.png" alt="무너폰2 포스터" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=Moona+Edition+2'">
+                <img src="image_b3f2a6.jpg.png" alt="" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=U%2B+Moona+Edition+2'">
             </div>
             <div class="kids-info-wrap">
                 <div class="kids-offer-box">
@@ -245,7 +248,7 @@
     </div>
 </div>
 
-<!-- Apply Section -->
+<!-- 상담 신청 섹션 -->
 <div class="apply-section" id="apply">
     <div class="apply-box">
         <h2 style="margin:0 0 10px;">지금 바로 혜택 신청하기</h2>
@@ -262,7 +265,6 @@
                     <option value="기타/협력사">기타/협력사</option>
                 </select>
             </div>
-            <!-- Carrier Selection -->
             <div class="form-group">
                 <label>현재 사용 중인 통신사</label>
                 <select name="carrier" required>
@@ -303,20 +305,20 @@
     <p style="margin-top:30px;">&copy; 2026 LG Uplus Corp. All Rights Reserved.</p>
 </footer>
 
-<!-- Floating Action Group -->
+<!-- 플로팅 버튼 그룹 -->
 <div class="floating-action-group">
     <a href="https://open.kakao.com/o/sWmnjdii" class="floating-btn btn-kakao">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c-4.97 0-9 3.134-9 7 0 2.474 1.656 4.632 4.116 5.864l-.946 3.473c-.053.195.168.358.326.248l4.137-2.88c.441.063.896.095 1.367.095 4.97 0 9-3.134 9-7s-4.03-7-9-7z"/></svg>
         실시간 카톡 상담
     </a>
     <a href="tel:01080804391" class="floating-btn btn-call">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         전화 상담하기
     </a>
 </div>
 
 <script>
-    // 1. Countdown Timer
+    // 1. 카운트다운 타이머
     const targetDate = new Date("March 6, 2026 00:00:00").getTime();
     setInterval(() => {
         const now = new Date().getTime();
@@ -328,12 +330,13 @@
         document.getElementById("seconds").innerText = Math.floor((diff % (1000 * 60)) / 1000);
     }, 1000);
 
-    // 2. Submit Logic
+    // 2. 제출 로직
     const consultForm = document.getElementById('consultForm');
     if (consultForm) {
         consultForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
+            // [!] 대리점별 전용 UCRM 링크로 교체하세요
             const ucrmUrl = "https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=cHBzbTc2ODYmMjAyNjAyMTIxNDI4NTk=";
             window.open(ucrmUrl, '_blank');
             
@@ -346,8 +349,13 @@
             const carrier = formData.get('carrier');
             const product = formData.get('product');
 
-            const BOT_TOKEN = "8542782104:AAFsHvPTZimTxmVj1jZW7yfReemVZKsbao0";
-            const CHAT_ID = "6675909268";
+            // ======================================================
+            // [지수님 설정 완료] 텔레그램 봇 정보가 반영되었습니다.
+            // ======================================================
+            const BOT_TOKEN = "8633339161:AAFrUxspxKfsDgCGvpOdhh_SJa6gRhasFkQ"; 
+            const CHAT_ID = "8627078854"; 
+            // ======================================================
+            
             const text = `🚨 [유체페 신청 알림]\n🏢 소속: ${company}\n📶 통신사: ${carrier}\n📱 관심: ${product}\n\n⚠️ 고객이 공식 접수페이지로 이동했습니다. 카톡 문의를 확인해 주세요!`;
 
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
