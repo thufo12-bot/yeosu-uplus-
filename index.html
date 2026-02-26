@@ -125,13 +125,13 @@
         .gift-list li { padding: 10px 0 10px 35px; position: relative; font-weight: 600; color: #333; border-bottom: 1px solid #f0f0f0; font-size: 1.05rem; }
         .gift-list li::before { content: '🎁'; position: absolute; left: 0; font-size: 1.2rem; }
 
-        /* [수정] 신청 섹션: 폼 삭제 및 공식 시스템 연동 버튼형으로 변경 */
+        /* 신청 섹션 */
         .apply-section { background: var(--bg-gray); padding: 100px 20px; border-radius: 60px 60px 0 0; text-align: center; }
         .apply-box { max-width: 700px; margin: 0 auto; background: white; padding: 60px 40px; border-radius: 40px; box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
         .apply-box h2 { font-size: 2.2rem; font-weight: 800; margin-bottom: 15px; color: #000; }
         .apply-box p.desc { color: #555; font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6; }
         
-        /* 버튼 디자인 */
+        /* 메인 신청 버튼 (새창 열기 적용) */
         .main-apply-btn {
             display: inline-block;
             width: 100%;
@@ -312,14 +312,14 @@
     </div>
 </div>
 
-<!-- [수정] 자사 UCRM 연동 신청 섹션 -->
+<!-- 자사 UCRM 연동 신청 섹션 -->
 <div class="apply-section" id="apply">
     <div class="apply-box">
         <h2>지금 바로 혜택 신청하기</h2>
         <p class="desc">고객님의 소중한 개인정보 보호를 위해<br><strong>LG유플러스 공식 추천 시스템</strong>을 통해 안전하게 접수됩니다.</p>
         
-        <!-- 공식 UCRM 링크 연동 버튼 -->
-        <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=cHBzbTc2ODYmMjAyNjAyMTIxNDI4NTk=" target="_blank" class="main-apply-btn">
+        <!-- [수정] target="_blank" 및 rel 추가로 새창에서 열기 적용 -->
+        <a href="https://ucrm.lguplus.co.kr/mbl/v2/rcmd/moveInfo?param=cHBzbTc2ODYmMjAyNjAyMTIxNDI4NTk=" target="_blank" rel="noopener noreferrer" class="main-apply-btn">
             역대급 기회 신청하기 (공식)
         </a>
 
@@ -327,7 +327,8 @@
         <div class="notice-box">
             <h4>⚠️ 필독: 사은품 증정 안내</h4>
             <p>
-                위 버튼을 눌러 접수를 완료하신 후, 반드시 하단 <strong>[실시간 카톡 상담]</strong>으로 <br>
+                위 버튼을 눌러 <strong>새창에서 접수를 완료</strong>하신 후,<br>
+                다시 이 페이지로 돌아와 하단 <strong>[실시간 카톡 상담]</strong>으로 <br>
                 <strong>"상담 신청 완료했습니다"</strong>라고 메시지를 남겨주세요! <br>
                 확인 즉시 <strong>다이소 5,000원 상품권</strong>을 보내드립니다.
             </p>
