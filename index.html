@@ -168,6 +168,7 @@
             <div class="word-row"><span class="point-char">페</span><span class="rest-char">스티벌</span></div>
         </div>
     </h1>
+    <!-- 실시간 작동 타이머 -->
     <div class="timer-box">
         <div class="timer-unit"><div class="timer-val" id="days">00</div><div style="font-size:0.75rem;">일</div></div>
         <div class="timer-unit"><div class="timer-val" id="hours">00</div><div style="font-size:0.75rem;">시간</div></div>
@@ -226,7 +227,7 @@
 
     <div class="kids-section">
         <h2 style="font-size:2rem; font-weight:800; margin-bottom:40px;">U+ 무너에디션2 <span style="color:var(--uplus-magenta);">키즈폰 0원</span></h2>
-        <img src="image_b3f2a6.jpg.png" alt="키즈폰" class="kids-img" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=Kids+Phone+Moona'">
+        <img src="image_b3f2a6.jpg.png" alt="무너폰2" class="kids-img" onerror="this.src='https://via.placeholder.com/500x600/ffffff/4a90e2?text=Kids+Phone+Moona'">
         <div class="kids-offer-box">
             <div style="font-size:2.8rem; font-weight:900; color:var(--uplus-magenta); line-height:1.2;">기기 가격 0원</div>
             <p style="font-weight:800; color:#4A90E2; font-size:1.4rem; margin:15px 0 20px;">+ 6개월 요금 전액 지원!</p>
@@ -262,10 +263,7 @@
                     <option value="알뜰폰">알뜰폰</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>연락처 (번호만 입력)</label>
-                <input type="tel" name="phone" placeholder="01012345678" required pattern="[0-9]{10,11}">
-            </div>
+            <!-- 신청인 성함 마스킹 필드 -->
             <div class="form-group">
                 <label>신청인 성함</label>
                 <input type="text" id="userNameInput" placeholder="성함을 입력하세요 (최대 8자)" required maxlength="8">
@@ -322,7 +320,7 @@
     setInterval(updateTimer, 1000);
     updateTimer();
 
-    // 2. 한글 깨짐 방지 성함 마스킹 로직 (REFINED)
+    // 2. 한글 깨짐 방지 성함 마스킹 로직
     const nameInput = document.getElementById('userNameInput');
     const maskedHidden = document.getElementById('maskedName');
     
@@ -344,22 +342,14 @@
             maskedHidden.value = "";
             return;
         }
-
-        // IME 입력 중 글자 날림 방지를 위해 배열로 처리
         let charArray = Array.from(val);
-        
-        // 2번째 자리가 별표(*)가 아니라면 별표로 강제 치환
         if (charArray.length >= 2 && charArray[1] !== '*') {
             charArray[1] = '*';
         }
-        
         let result = charArray.join('');
-        
-        // 8자 제한 (글자 깨짐 방지를 위해 slice 사용)
         if (result.length > 8) result = result.substring(0, 8);
-
         nameInput.value = result;
-        maskedHidden.value = result; // 텔레그램으로도 주석 처리된 이름 전송
+        maskedHidden.value = result; 
     }
 
     // 3. 제출 및 텔레그램 전송 로직
@@ -378,15 +368,13 @@
             const formData = new FormData(this);
             const company = formData.get('company');
             const carrier = formData.get('carrier');
-            const phone = formData.get('phone');
             const product = formData.get('product');
-            // 마스킹된 이름을 텔레그램으로 전송
             const finalMaskedName = document.getElementById('maskedName').value;
 
             const BOT_TOKEN = "8633339161:AAFrUxspxKfsDgCGvpOdhh_SJa6gRhasFkQ"; 
             const CHAT_ID = "8627078854"; 
             
-            const text = `🚨 [유체페 신청 알림]\n🏢 소속: ${company}\n📶 통신사: ${carrier}\n📞 연락처: ${phone}\n👤 이름: ${finalMaskedName}\n📱 관심: ${product}\n\n⚠️ 고객이 공식 접수페이지로 이동했습니다. 해피콜을 준비하세요!`;
+            const text = `🚨 [유체페 신청 알림]\n🏢 소속: ${company}\n📶 통신사: ${carrier}\n👤 이름: ${finalMaskedName}\n📱 관심: ${product}\n\n⚠️ 고객이 공식 접수페이지로 이동했습니다. 해피콜을 준비하세요!`;
 
             fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
                 method: 'POST',
